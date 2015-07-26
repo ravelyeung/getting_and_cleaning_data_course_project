@@ -88,12 +88,4 @@ for(i in 1:subject_length) {
         row <- row + 1
     }
 }
-for(i in 1:180){
-    if(data_done_2[i,2]==1){data_done_2[i,2]<-"WALKING"}
-    if(data_done_2[i,2]==2){data_done_2[i,2]<-"WALKING_UPSTAIRS"}
-    if(data_done_2[i,2]==3){data_done_2[i,2]<-"WALKING_DOWNSTAIRS"}
-    if(data_done_2[i,2]==4){data_done_2[i,2]<-"SITTING"}
-    if(data_done_2[i,2]==5){data_done_2[i,2]<-"STANDING"}
-    if(data_done_2[i,2]==0){data_done_2[i,2]<-"LAYING"}
-}
 write.table(data_done_2, "data_done_2.txt", row.name=FALSE)
