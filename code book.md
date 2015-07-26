@@ -1,23 +1,36 @@
-## Getting and Cleaning Data - Course Project
+## Getting and Cleaning Data - Course Project: Cook Book
 
-### Overview:
-The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected. 
+This file is described the variables I used in run_analysis.R.
 
-One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
-
-<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-
-
-
-Here are the data for the project:
-
-<https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
-
- You should create one R script called run_analysis.R that does the following. 
-
- * Merges the training and the test sets to create one data set.
- * Extracts only the measurements on the mean and standard deviation for each measurement. 
- * Uses descriptive activity names to name the activities in the data set
- * Appropriately labels the data set with descriptive variable names. 
- * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
+### Variables Overview:
+ * **filename**: contains the file download from the link 
+ * **fileURL**: contains the link <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+ * **activity**: contains the data read from "UCI HAR Dataset/activity_labels.txt" (Links the class labels with their activity name:
+   1 WALKING
+   2 WALKING_UPSTAIRS
+   3 WALKING_DOWNSTAIRS
+   4 SITTING
+   5 STANDING
+   6 LAYING
+ * **feature**: contains the data read from "UCI HAR Dataset/features.txt" (List of all 561 features.)
+ * **subject_train**: contains the data read from "UCI HAR Dataset/train/subject_train.txt" (Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.)
+ * **data_train**: contains the data read from 'UCI HAR Dataset/train/X_train.txt' (Training set.)
+ * **label_train**: contains the data read from 'UCI HAR Dataset/train/y_train.txt' (Training labels.)
+ * **subject_test**: contains the data read from 'UCI HAR Dataset/test/subject_test.txt'
+ * **data_test**: contains the data read from 'UCI HAR Dataset/test/x_test.txt' (Test set.)
+ * **label_test**: contains the data read from 'UCI HAR Dataset/test/y_test.txt' (Test labels.)
+ * **data_train_and_test**: contains the data binded together from **data_train** & **data_test** by rows
+ * **label_train_and_test**: contains the data binded together from **label_train** & **label_test** by rows
+ * **subject_train_and_test**: contains the data binded together from **subject_train** & **subject_test** by rows 
+ * **indicator**: to indicate the features about mean and standard deviation
+ * **activity_label**: to temporatory store the activity names
+ * **data_done**: the variable contains used to contain the result of part 1~4
+ * **subject_length**: to indicate the amount of subjects
+ * **activity_length**: to indicate the amount of activities
+ * **column_length**: to count how many mean and standard deviation features here
+ * **data_done_2** the variable contains used to contain the final result
+ * **row**: temp. variable
+ * **i**: temp. variable
+ * **j**: temp. variable
+ * **bool1**: temp. indicator variable
+ * **bool2**: temp. indicator variable
